@@ -113,43 +113,43 @@
 						<p class="text-text-light">Current Tier</p>
 						<p class="font-medium">{pricingData.appliedTier}</p>
 					</div>
-					<div>
-						<p class="text-text-light">Historical Purchases</p>
-						<p class="font-medium">{pricingData.historicalCreditsPurchased} Credits</p>
-					</div>
 				</div>
 
-				<h4 class="font-medium mb-2 text-sm text-text-light uppercase tracking-wider">Pricing Tiers</h4>
+				<h4 class="font-medium mb-2 text-sm text-text-light uppercase tracking-wider">Volume Pricing</h4>
 				<div class="border rounded-lg overflow-hidden">
 					<table class="w-full text-sm text-left">
 						<thead class="bg-bg-light border-b text-text-light">
 							<tr>
 								<th class="px-4 py-2 font-medium">Tier</th>
 								<th class="px-4 py-2 font-medium">Volume</th>
-								<th class="px-4 py-2 font-medium text-right">Price per Credit</th>
+								<th class="px-4 py-2 font-medium text-right">Standard</th>
+								<th class="px-4 py-2 font-medium text-right">Premium</th>
 							</tr>
 						</thead>
 						<tbody class="divide-y">
 							<tr>
 								<td class="px-4 py-2">Tier 1</td>
-								<td class="px-4 py-2">1 - {pricingData.tier1MaxCredits}</td>
-								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.pricePerCreditTier1?.toFixed(2)}</td>
+								<td class="px-4 py-2">1 – {pricingData.tier1MaxCredits}</td>
+								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.standardTier1Price?.toFixed(2)}</td>
+								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.premiumTier1Price?.toFixed(2)}</td>
 							</tr>
 							<tr>
 								<td class="px-4 py-2">Tier 2</td>
-								<td class="px-4 py-2">{pricingData.tier1MaxCredits + 1} - {pricingData.tier2MaxCredits}</td>
-								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.pricePerCreditTier2?.toFixed(2)}</td>
+								<td class="px-4 py-2">{pricingData.tier1MaxCredits + 1} – {pricingData.tier2MaxCredits}</td>
+								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.standardTier2Price?.toFixed(2)}</td>
+								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.premiumTier2Price?.toFixed(2)}</td>
 							</tr>
 							<tr>
 								<td class="px-4 py-2">Tier 3</td>
-								<td class="px-4 py-2">{pricingData.tier2MaxCredits + 1} - {pricingData.tier3MaxCredits}</td>
-								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.pricePerCreditTier3?.toFixed(2)}</td>
+								<td class="px-4 py-2">{pricingData.tier2MaxCredits + 1} – {pricingData.tier3MaxCredits}</td>
+								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.standardTier3Price?.toFixed(2)}</td>
+								<td class="px-4 py-2 text-right">{pricingData.currencySymbol}{pricingData.premiumTier3Price?.toFixed(2)}</td>
 							</tr>
 							{#if pricingData.qualifiesForContactSales}
 								<tr class="bg-accent/5">
-									<td class="px-4 py-2 font-medium text-accent">Tier 4+</td>
-									<td class="px-4 py-2 font-medium text-accent">>{pricingData.tier3MaxCredits}</td>
-									<td class="px-4 py-2 text-right font-medium text-accent">Contact Sales</td>
+									<td class="px-4 py-2 font-medium text-accent">500+</td>
+									<td class="px-4 py-2 font-medium text-accent">Contact Sales</td>
+									<td class="px-4 py-2 text-right font-medium text-accent" colspan={2}>Custom</td>
 								</tr>
 							{/if}
 						</tbody>
