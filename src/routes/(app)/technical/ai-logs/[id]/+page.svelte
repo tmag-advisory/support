@@ -62,7 +62,15 @@
         <dd class="mt-1 text-sm">{log.model || '—'}</dd>
       </div>
       <div>
-        <dt class="text-sm font-medium text-muted">Tokens Used</dt>
+        <dt class="text-sm font-medium text-muted">Plan Generation Tokens</dt>
+        <dd class="mt-1 text-sm">{formatNumber(log.planGenerationTokensUsed || 0)}</dd>
+      </div>
+      <div>
+        <dt class="text-sm font-medium text-muted">Summary Generation Tokens</dt>
+        <dd class="mt-1 text-sm">{formatNumber(log.summaryGenerationTokensUsed || 0)}</dd>
+      </div>
+      <div>
+        <dt class="text-sm font-medium text-muted">Total Tokens Used</dt>
         <dd class="mt-1 text-sm">{formatNumber(log.tokensUsed || 0)}</dd>
       </div>
       <div>

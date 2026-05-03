@@ -175,6 +175,8 @@ export interface AiLog {
   userEmail?: string;
   model?: string;
   tokensUsed?: number;
+  planGenerationTokensUsed?: number;
+  summaryGenerationTokensUsed?: number;
   status: string;
   promptSummary?: string;
   responseSummary?: string;

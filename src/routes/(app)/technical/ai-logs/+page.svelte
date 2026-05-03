@@ -55,7 +55,7 @@
     { value: 'flagged' as const, label: 'Flagged' },
     { value: 'high-usage' as const, label: 'High Usage' }
   ];
-  const headers = ['ID', 'User', 'Model', 'Tokens', 'Status', 'Flagged', 'Date'];
+  const headers = ['ID', 'User', 'Model', 'Plan Tokens', 'Summary Tokens', 'Total Tokens', 'Status', 'Flagged', 'Date'];
 </script>
 
 <PageHeader title="AI Logs" description="Monitor AI request activity">
@@ -91,6 +91,8 @@
         </td>
         <td class="px-4 py-3 text-sm">{log.userEmail || '—'}</td>
         <td class="px-4 py-3 text-sm">{log.model || '—'}</td>
+        <td class="px-4 py-3 text-sm">{formatNumber(log.planGenerationTokensUsed || 0)}</td>
+        <td class="px-4 py-3 text-sm">{formatNumber(log.summaryGenerationTokensUsed || 0)}</td>
         <td class="px-4 py-3 text-sm">{formatNumber(log.tokensUsed || 0)}</td>
         <td class="px-4 py-3 text-sm">
           <Badge text={log.status} />
